@@ -1,0 +1,76 @@
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.card-container img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-container img.scaled {
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+#next-button {
+  margin: 100px 20px;
+  display: block;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+#shuffle-button {
+  margin: 100px 20px;
+  display: block;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.card {
+  width: 200px;
+  height: 290px;
+  perspective: 800px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 2px solid #333;
+  border-radius: 8px;
+  transition: transform 0.6s;
+}
+
+.card .front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(360deg);
+}
+
+.card.scaled {
+  transform: scale(1.15);
+  z-index: 3;
+}
